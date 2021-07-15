@@ -13,6 +13,7 @@ exports.createFormation = (req, res, next) => {
     objectifs : req.body.objectifs ,
     publics : req.body.publics ,
     duree : req.body.duree ,
+    prix : req.body.prix ,
     formats :req.body.formats ,
     methodePedagogique :req.body.methodePedagogique ,
     evaluation :req.body.evaluation ,
@@ -28,7 +29,7 @@ exports.createFormation = (req, res, next) => {
   ).catch(
     (error) => {
       res.status(400).json({
-        error: error
+        error: error,
       });
     }
   );
