@@ -15,7 +15,7 @@ const sessionRoutes = require ('./routes/session');
 const inscriptionRoutes = require ('./routes/inscription');
 const sendMailRoutes = require ('./routes/sendMail');
 
-mongoose.connect(uri,{ useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(uri,{ useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify :false })
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
