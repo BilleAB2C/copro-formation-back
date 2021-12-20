@@ -1,6 +1,7 @@
 const nodemailer = require("nodemailer");
 
 exports.sendMailContact= (req, res, next) => {
+  console.log("coucou");
   const transporter = nodemailer.createTransport({
     service : 'hotmail',
     auth:{
@@ -42,6 +43,7 @@ exports.sendMailContact= (req, res, next) => {
 
   transporter.sendMail(optionsUs, function(errUs, infoUs){
     if (errUs){
+      console.log("errUs : "+errUs);
       res.status(400).json({
         error: errUs
       });
@@ -49,6 +51,7 @@ exports.sendMailContact= (req, res, next) => {
     }
     transporter.sendMail(optionsUser, function(errUser, infoUser){
       if (errUser){
+        console.log("errUser : "+errUser);
         res.status(400).json({
           error: errUser
         });
