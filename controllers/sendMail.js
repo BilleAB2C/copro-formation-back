@@ -10,15 +10,17 @@ exports.sendMailContact= (req, res, next) => {
   })
 
   const html = "<h2>Demande de contact</h2>"+
-               "<h3>Nom : "+req.body.name+"</h3>"+
+               "<h3>Nom : "+req.body.nom+"</h3>"+
+               "<h3>Prénom : "+req.body.prenom+"</h3>"+
                "<h3>Email : "+req.body.email+"</h3>"+
                "<h3>Objet : "+req.body.objet+"</h3>"+
-               "<h3>Message</h3><p>"+req.body.body+"</p>" ;
+               "<h3>Message</h3><p>"+req.body.message+"</p>" ;
 
-  const text = "Nom : "+req.body.name+"\n"+
+  const text = "Nom : "+req.body.nom+"\n"+
+               "Prénom : "+req.body.prenom+"\n"+
                "Email : "+req.body.email+"\n"+
                "Objet : "+req.body.objet+"\n"+
-               "Message\n"+req.body.body ;
+               "Message\n"+req.body.message ;
 
   const optionsUs = {
     from : "billel.abbes@hotmail.com",
