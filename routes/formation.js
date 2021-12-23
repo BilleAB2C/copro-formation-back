@@ -3,6 +3,7 @@ const router = express.Router();
 const formationCtrl = require('../controllers/formation');
 const auth = require('../middlewares/auth');
 
+router.get('/for_home', formationCtrl.getFormationsForHome);
 router.get('/:id', formationCtrl.getFormation);
 router.get('/', formationCtrl.getAllFormations);
 router.get('/by_cathegorie/:id_cathegorie', formationCtrl.getFormationByCategorie);
