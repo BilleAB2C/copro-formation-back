@@ -52,6 +52,28 @@ exports.getFormation = (req, res, next) => {
   );
 }
 
+exports.getFormationsForHome = (req, res, next) => {
+  Formation.find({
+    $or : [
+      {_id: "60f0547122ecfa006860e840"},
+      {_id: "60e57762bb1ffe4facc21a7e"},
+      {_id: "60edb30112dd4e00276848e8"},
+      {_id: "6139de6810cd030092090098"},
+      {_id: "6139c0d010cd030092090088"}
+    ]
+  }).then(
+      (formations) => {
+        res.status(200).json(formations);
+      }
+    ).catch(
+      (error) => {
+        res.status(400).json({
+          error: error
+        });
+      }
+    );
+}
+
 exports.getAllFormations = (req, res, next) => {
   Formation.find().then(
       (formations) => {
@@ -89,7 +111,7 @@ exports.modifyFormation = (req, res, next) => {
     () => {
       res.status(201).json({
         message: 'Formation updated successfully!'
-        
+
       });
     }
   ).catch(
