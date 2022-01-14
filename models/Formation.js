@@ -6,8 +6,10 @@ const formationSchema = mongoose.Schema({
   sousTitre : {type : String, required : false},
   categorie : {
     type: String,
-    enum : ['juridique', 'comptable', 'controleur', 'expertise','gestion','reno' ]
+    // enum : ['juridique', 'comptable', 'controleur', 'expertise','gestion','reno' ]
+    enum : ['juridique', 'gestion', 'reno', 'technique','expertise' ]
   },
+  effectif : {type : String, required : true},
   descriptionDetaillee : {type : String, required : false},
   descriptionCourte : {type : String, required : false},
   programme : {
@@ -26,6 +28,8 @@ const formationSchema = mongoose.Schema({
   formats :[{ type : String , required : false }],
   methodePedagogique :{ type : String , required : false },
   evaluation :{ type : String , required : false },
+  imageUrl : {type : String , required : false},
+  pdfUrl : {type : String , required : false},
   dateTime : {type : Date, required : true}
 });
   formationSchema.plugin(uniqueValidator);
