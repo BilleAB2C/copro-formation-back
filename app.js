@@ -6,7 +6,7 @@ require('dotenv').config();
 const app = express();
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://coproFormationUser:J11ei7rN8mnQBTcV@clustercoproformation.wwiqj.mongodb.net/coproFormationDB?retryWrites=true&w=majority";
+const uri = "mongodb+srv://ENV.User:ENV.password@clustercoproformation.wwiqj.mongodb.net/coproFormationDB?retryWrites=true&w=majority";
 
 const multer = require('multer');
 var fileExtension = require('file-extension')
